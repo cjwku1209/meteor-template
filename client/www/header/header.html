@@ -1,7 +1,7 @@
 <template name="header">
     <div class = "header">
         <div class="ui massive secondary pointing menu">
-            <a class="item active">
+            <a class="item active" id="id_header_item_home">
                 <div class="home">
                     Calvin Ku
                 </div>
@@ -9,17 +9,71 @@
             <div class="right menu">
                 <a class="item">
                     <i class="folder open icon"></i>
-                    PORTFOLIO
+                    TITLE1
                 </a>
                 <a class="item">
                     <i class="user icon"></i>
-                    ABOUT
+                    TITLE2
                 </a>
-                <a class="item">
-                    <i class="mail icon"></i>
-                    CONTACT
-                </a>
+                <div class="login-button">
+                    <div class="ui dropdown item" id="id_header_dropdown_login">
+                        <a class="item" id="id_header_icon_login">
+                            <i class="user icon"></i>
+                            Login
+                        </a>
+                        <div class="menu" id="id_header_menu_login">
+                            <div class="item">
+                                Personal info
+                            </div>
+                            <button class="fluid negative ui button" id="id_header_button_logout">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="ui modal" id="id_header_modal_login">
+        <div class="header">
+            Login
+        </div>
+        <div class="ui two column centered grid">
+            <div class="column">
+                <div class="image" width="10" height="10">
+                    <img src="/img/loginPic.jpg" alt="loginPic.jpg" width="300" height="300">
+                </div>
+            </div>
+            <div class="column">
+                <div class="login">
+                    <div class="field">
+                        <div class="ui left icon large input">
+                            <i class="user icon"></i>
+                            <input type="text" placeholder="Email" id="id_header_input_email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon large input">
+                            <i class="lock icon"></i>
+                            <input type="password" placeholder="Password" id="id_header_input_password">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="right">
+                <div class="ui black deny button">
+                    Cancel
+                </div>
+                <div class="ui positive right labeled icon button" id="id_header_button_login">
+                    Login
+                    <i class="checkmark icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui active dimmer" id="id_header_dimmer_login">
+        <div class="ui text loader">loading</div>
     </div>
 </template>
