@@ -1,5 +1,21 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+	let root = Meteor.users.findOne({
+		username: 'root'
+	});
+	if (root) {
+		Meteor.users.remove({
+			username: 'root'
+		});
+	}
+	let user = Accounts.createUser({
+		username: 'root',
+		password: 'root',
+		profile: {
+			name: 'Super User'
+		}
+	});
+	Roles.addUsersToRoles(user, ['root', 'administrator']);
 });
