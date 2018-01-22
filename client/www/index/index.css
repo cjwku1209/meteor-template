@@ -1,0 +1,14 @@
+[class="loginHeader"] {
+    background: #2980b9;
+    height: 60px;
+    width: 100%;
+}
+
+[class="login"] {
+    padding: 100px 0px;
+}
+
+[class="login-button"] {
+    /*position: absolute;*/
+    /*padding-bottom: 0px;*/
+}
